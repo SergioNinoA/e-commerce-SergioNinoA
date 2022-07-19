@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import Navbar from './components/NavBar';
-
+import Navbar from './components/NavBar/NavBar';
+import ItemListContainer from './components/ItemListContainer'
 
 function App() {
   return (
@@ -9,9 +9,7 @@ function App() {
       <header className="App-header">
       <Navbar />
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Espacio de E-commerce de Sergio Niño
-        </p>
+        <ItemListContainer greeting="Bienvenido al e-commerce de Sergio Niño" />
         <a
           className="App-link"
           href="https://reactjs.org"
