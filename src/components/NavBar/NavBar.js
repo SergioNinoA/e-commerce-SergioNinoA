@@ -33,10 +33,10 @@ const NavBar = () => {
                                     <li><a className="dropdown-item text-white text-center" href="">Español</a></li>
                                     <li><a className="dropdown-item text-white text-center" href="">Français</a></li>
                                 </ul>
-                                <CartWidget />
+                                
                             </li>
                         </ul>
-                    </div>
+                    </div><CartWidget />
                 </div>
             </nav>
         </container>
