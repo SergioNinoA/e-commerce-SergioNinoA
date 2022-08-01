@@ -1,46 +1,51 @@
-import './navbar.css'
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import CartWidget from './CartWidget';
+import ItemDetail from './ItemDetail';
+import ItemDetailContainer from './ItemDetailContainer';
+import ItemListContainer from './ItemListContainer';
 
-const NavBar = () => {
+function NavBar() {
     return (
-        <nav className="nav">
-            <container className="nav-bar navbar-expand-lg position-relative">
-            <nav className="navbar navbar-expand-lg navbar-dark bg-black">
-                <div className="container-fluid">
-                    <div id="header__cont">
-                        <h1 className="header__title">Nombre del comercio</h1>
-                        <h2 className="header__subtitle">Lema del comercio</h2>
-                    </div>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse " id="navbarTogglerDemo02">
-                        <ul
-                            className="navbar-nav me-auto mb-2 mb-lg-0 position-relative bottom-0 start-50 translate-middle-x">
-                            <li className="nav-item text-center"><a className="nav-link" href="">History</a></li>                            
-                            <li className="nav-item text-center"><a className="nav-link" href="">Contact</a></li>
-                        </ul>
-                        <ul className="navbar-nav mb-2 mb-lg-0 position-relative bottom-0 end-0">
-                            <li className="nav-item nav-link dropdown ">
-                                <a className="dropdown-toggle header__language" href="#" id="navbarDropdownMenuLink" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    Language
-                                </a>
-                                <ul className="dropdown-menu dropdown-menu-dark bg-black dropdown-menu-lg-end"
-                                    aria-labelledby="navbarDarkDropdownMenuLink">
-                                    <li><a className="dropdown-item text-white text-center" href="">Español</a></li>
-                                    <li><a className="dropdown-item text-white text-center" href="">Français</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </container>
-        </nav>
-    )
+        <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
+            <Container>
+                <Navbar.Brand href="#home" style={{margin:'-15px 0px'}}><img
+                    src="./images/logo.png"
+                    width="90"
+                    height="85"
+                    className="d-inline-block align-top"
+                    alt="E-commerce logo"
+                /></Navbar.Brand>
+                <Navbar.Brand href="#home">E-commerce Sergio Niño</Navbar.Brand>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Collapse id="responsive-navbar-nav">
+                    <Nav className="me-auto">
+                        <Nav.Link href="#features">Catálogo</Nav.Link>
+                        <Nav.Link href="#pricing">Contacto</Nav.Link>
+                        <NavDropdown title="Categorías" id="collasible-nav-dropdown">
+                            <NavDropdown.Item href="#action/3.2">
+                                NOTEBOOKS
+                            </NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.">PC ESCRITORIO</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.3">PC GAMER</NavDropdown.Item>
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item href="#action/3.4">
+                                VER MÁS
+                            </NavDropdown.Item>
+                        </NavDropdown>
+                    </Nav>
+                    <Nav>
+                        <Nav.Link href="#deets">Ingresar</Nav.Link>
+                        <Nav.Link eventKey={2} href="#memes">
+                            <CartWidget />
+                        </Nav.Link>
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
+    );
 }
-
 
 export default NavBar;
