@@ -15,12 +15,12 @@ function NavBar() {
                             width="90"
                             height="85"
                             className="d-inline-block align-top"
-                            alt="E-commerce logo" />
+                            alt="E-commerce SN logo" />
                     </Navbar.Brand>
                 </LinkContainer>
                 <LinkContainer to='/'>
                     <Navbar.Brand>
-                        E-commerce SN
+                        E-commerce Sergio Niño
                     </Navbar.Brand>
                 </LinkContainer>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -62,9 +62,11 @@ function NavBar() {
                         <Nav.Link href="#deets">
                             Ingresar
                         </Nav.Link>
-                        <Nav.Link eventKey={2} href="#memes">
-                            <CartWidget />
-                        </Nav.Link>
+                        <LinkContainer to='/cart'>
+                            <Nav.Link>
+                                <CartWidget />
+                            </Nav.Link>
+                        </LinkContainer>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
