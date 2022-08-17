@@ -10,12 +10,12 @@ const ItemDetailContainer = () => {
     const [product, setProduct] = useState();
 
     const obtainProduct = async () => {
+
         const found = await getItem(id);
-        setProduct(found)
+        setProduct(found);
     }
 
     useEffect(() => {
-
         obtainProduct();
     }, []);
 

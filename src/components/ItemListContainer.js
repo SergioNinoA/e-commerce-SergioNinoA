@@ -9,21 +9,19 @@ const ItemListContainer = (props) => {
     const { categoryId } = useParams();
     const [items, setItems] = useState();
 
-    useEffect(() => {
-
-        setItems(null);
-        obtainProduct();
-    }, [categoryId])
-
     const obtainProduct = async () => {
-
         const found = await getCategory(categoryId);
         setItems(found);
     }
 
+    useEffect(() => {
+        setItems(null);
+        obtainProduct();
+    }, [categoryId]);
+
     return (
         <div>
-            <h1 style={{ textAlign: 'center', paddingTop: '40px', paddingBottom: '10px', fontSize: '45px' }}>
+            <h1 style={{ textAlign: 'center', paddingTop: '40px', paddingBottom: '10px', fontSize: '45px' , height: '100%' }}>
                 {props.greeting}
             </h1>
             {items ? <ItemList items={items} /> : <Loading />}
